@@ -9,4 +9,9 @@ systems:
     description: "Implemented a scriptable object based dialogue system"
     highlighted: false
 tech: ["Verse", "Unreal Editor for Fortnite"]
+
+flags:
+  hasDemo: false
+  isCommercial: true
+  isGameJam: false
 ---

@@ -15,4 +15,9 @@ systems:
     description: "Runtime level generation for diverse maps."
     highlighted: false
 tech: ["C++", "Unreal Engine"]
+
+flags:
+  hasDemo: false
+  isCommercial: true
+  isGameJam: false
 ---

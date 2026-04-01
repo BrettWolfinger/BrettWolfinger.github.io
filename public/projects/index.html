@@ -10,7 +10,7 @@
 <meta name="description" content="Projects - Brett Wolfinger">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.85aca1d619f00746145d7466b7ae22294b06e661530bcbb7d26471f81d569dcc.css" integrity="sha256-hayh1hnwB0YUXXRmt64iKUsG5mFTC8u30mRx&#43;B1Wncw=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.189685339d0a336b6af92335cc782ef7bd3bb75929a44889205526b743b84028.css" integrity="sha256-GJaFM50KM2tq&#43;SM1zHgu9707t1kppEiJIFUmt0O4QCg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -199,10 +199,34 @@
   
 </div>
 
+<div class="filter-group">
+  <h4>Features</h4>
+
+  <button data-flag="hasDemo">Has Demo</button>
+  <button data-flag="isCommercial">Commercial Product</button>
+  <button data-flag="isGameJam">Game Jam</button>
+</div>
+
 
 <div class="projects-grid">
   
-    <div class="project-card" data-tags="C&#43;&#43;,Unreal Engine">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="C&#43;&#43;,Unreal Engine"
+         data-flags="isCommercial">
       <a href="/projects/burbank/">
         
           <img src="/images/burbank-banner.jpg" alt="Projects">
@@ -214,8 +238,25 @@
         
       </a>
     </div>
+
   
-    <div class="project-card" data-tags="C#,Unity Engine">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="C#,Unity Engine"
+         data-flags="hasDemo,isCommercial">
       <a href="/projects/vesuvius/">
         
           <img src="/images/vesuvius-banner.png" alt="Projects">
@@ -227,8 +268,25 @@
         
       </a>
     </div>
+
   
-    <div class="project-card" data-tags="C#,Unity Engine">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="C#,Unity Engine"
+         data-flags="hasDemo,isGameJam">
       <a href="/projects/lovelanguage/">
         
           <img src="/images/lovelanguage-banner.png" alt="Projects">
@@ -240,8 +298,25 @@
         
       </a>
     </div>
+
   
-    <div class="project-card" data-tags="Verse,Unreal Editor for Fortnite">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="Verse,Unreal Editor for Fortnite"
+         data-flags="isCommercial">
       <a href="/projects/dinertycoon/">
         
           <img src="/images/uefn-banner.jpg" alt="Projects">
@@ -253,8 +328,25 @@
         
       </a>
     </div>
+
   
-    <div class="project-card" data-tags="Verse,Unreal Editor for Fortnite">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="Verse,Unreal Editor for Fortnite"
+         data-flags="isCommercial">
       <a href="/projects/nitrocity/">
         
           <img src="/images/uefn-banner.jpg" alt="Projects">
@@ -266,8 +358,25 @@
         
       </a>
     </div>
+
   
-    <div class="project-card" data-tags="Papyrus,Creation Kit">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="Papyrus,Creation Kit"
+         data-flags="">
       <a href="/projects/beyondskyrim/">
         
           <img src="/images/bsk-banner.jpeg" alt="Projects">
@@ -279,8 +388,25 @@
         
       </a>
     </div>
+
   
-    <div class="project-card" data-tags="C#,Unity Engine">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="C#,Unity Engine"
+         data-flags="hasDemo,isGameJam">
       <a href="/projects/traingame/">
         
           <img src="/images/traingame-banner.png" alt="Projects">
@@ -292,8 +418,25 @@
         
       </a>
     </div>
+
   
-    <div class="project-card" data-tags="C#,Unity Engine">
+
+    
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+    
+
+    <div class="project-card" 
+         data-tags="C#,Unity Engine"
+         data-flags="hasDemo,isGameJam">
       <a href="/projects/fishmonger/">
         
           <img src="/images/fishmonger-banner.png" alt="Projects">
@@ -305,32 +448,105 @@
         
       </a>
     </div>
+
   
 </div>
 
-
 <script>
-const buttons = document.querySelectorAll('.tag-filters button');
+const tagButtons = document.querySelectorAll('[data-tag]');
+const flagButtons = document.querySelectorAll('[data-flag]');
 const projects = document.querySelectorAll('.project-card');
 
-buttons.forEach(btn => {
+
+let activeFilters = {};
+
+
+let activeFlags = new Set();
+
+
+tagButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const tag = btn.dataset.tag;
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    const group = btn.dataset.group;
 
-    projects.forEach(p => {
-      const projectTags = p.dataset.tags.split(',');
-      if(tag === 'all' || projectTags.includes(tag)) {
-        p.style.display = 'block';
-      } else {
-        p.style.display = 'none';
+    
+    if (tag === 'all') {
+      activeFilters = {};
+      activeFlags.clear();
+
+      document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      updateProjects();
+      return;
+    }
+
+    document.querySelector('[data-tag="all"]').classList.remove('active');
+
+    if (!activeFilters[group]) {
+      activeFilters[group] = new Set();
+    }
+
+    if (activeFilters[group].has(tag)) {
+      activeFilters[group].delete(tag);
+      btn.classList.remove('active');
+
+      if (activeFilters[group].size === 0) {
+        delete activeFilters[group];
       }
-    });
+    } else {
+      activeFilters[group].add(tag);
+      btn.classList.add('active');
+    }
+
+    updateProjects();
   });
 });
-</script>
 
+
+flagButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const flag = btn.dataset.flag;
+
+    if (activeFlags.has(flag)) {
+      activeFlags.delete(flag);
+      btn.classList.remove('active');
+    } else {
+      activeFlags.add(flag);
+      btn.classList.add('active');
+    }
+
+    updateProjects();
+  });
+});
+
+
+function updateProjects() {
+  projects.forEach(p => {
+    const projectTags = p.dataset.tags ? p.dataset.tags.split(',') : [];
+    const projectFlags = p.dataset.flags ? p.dataset.flags.split(',') : [];
+
+    
+    const matchesTags = Object.entries(activeFilters).every(([group, tagsSet]) => {
+      return Array.from(tagsSet).some(tag => projectTags.includes(tag));
+    });
+
+    
+    const matchesFlags = Array.from(activeFlags).every(flag =>
+      projectFlags.includes(flag)
+    );
+
+    if (
+      (Object.keys(activeFilters).length === 0 || matchesTags) &&
+      matchesFlags
+    ) {
+      p.style.display = 'block';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+}
+</script>
 
     </main>
     

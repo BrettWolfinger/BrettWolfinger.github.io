@@ -15,4 +15,9 @@ systems:
     description: "Runtime level generation for diverse maps."
     highlighted: false
 tech: ["C#", "Unity Engine"]
+
+flags:
+  hasDemo: true
+  isCommercial: true
+  isGameJam: false
 ---

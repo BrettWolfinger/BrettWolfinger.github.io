@@ -15,4 +15,9 @@ systems:
     description: "Runtime level generation for diverse maps."
     highlighted: false
 tech: ["Papyrus", "Creation Kit"]
+
+flags:
+  hasDemo: false
+  isCommercial: false
+  isGameJam: false
 ---

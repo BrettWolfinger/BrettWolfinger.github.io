@@ -229,3 +229,39 @@ body {
   background-color: #555;
   color: white;
 }
+
+/* ================= FLAG BUTTONS ================= */
+.filter-group button[data-flag] {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* Active / toggled-on state */
+.filter-group button[data-flag].active {
+  background-color: #1e90ff;
+  color: white;
+  border-color: #1e90ff;
+  box-shadow: 0 2px 5px rgba(30,144,255,0.4);
+}
+
+/* Hover effect (optional) */
+.filter-group button[data-flag]:hover {
+  background-color: #1c86ee;
+  color: white;
+}
+
+/* Slight spacing for buttons */
+.filter-group button[data-flag] {
+  margin: 0.2rem;
+}
+
+/* Optional: small icon style inside button if you want to add 🎮 / 💰 symbols */
+.filter-group button[data-flag]::before {
+  content: attr(data-icon);
+  margin-right: 0.3rem;
+}

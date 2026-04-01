@@ -20,10 +20,34 @@
   {{ end }}
 </div>
 
+<div class="filter-group">
+  <h4>Features</h4>
+
+  <button data-flag="hasDemo">Has Demo</button>
+  <button data-flag="isCommercial">Commercial Product</button>
+  <button data-flag="isGameJam">Game Jam</button>
+</div>
+
 <!-- ===== PROJECTS GRID ===== -->
 <div class="projects-grid">
   {{ range .Pages }}
-    <div class="project-card" data-tags="{{ delimit .Params.tech "," }}">
+
+    {{ $allTags := slice }}
+    {{ range .Params.tech }}{{ $allTags = $allTags | append . }}{{ end }}
+    {{ range .Params.tags }}{{ $allTags = $allTags | append . }}{{ end }}
+    {{ range .Params.category }}{{ $allTags = $allTags | append . }}{{ end }}
+    {{ range .Params.platforms }}{{ $allTags = $allTags | append . }}{{ end }}
+
+    {{ $flagList := slice }}
+    {{ with .Params.flags }}
+      {{ if .hasDemo }}{{ $flagList = $flagList | append "hasDemo" }}{{ end }}
+      {{ if .isCommercial }}{{ $flagList = $flagList | append "isCommercial" }}{{ end }}
+      {{ if .isGameJam }}{{ $flagList = $flagList | append "isGameJam" }}{{ end }}
+    {{ end }}
+
+    <div class="project-card" 
+         data-tags="{{ delimit ($allTags | uniq) "," }}"
+         data-flags="{{ delimit $flagList "," }}">
       <a href="{{ .RelPermalink }}">
         {{ with .Params.heroImage }}
           <img src="{{ . }}" alt="{{ $.Title }}">
@@ -35,30 +59,103 @@
         {{ end }}
       </a>
     </div>
+
   {{ end }}
 </div>
-
 <!-- ===== FILTER SCRIPT ===== -->
 <script>
-const buttons = document.querySelectorAll('.tag-filters button');
+const tagButtons = document.querySelectorAll('[data-tag]');
+const flagButtons = document.querySelectorAll('[data-flag]');
 const projects = document.querySelectorAll('.project-card');
 
-buttons.forEach(btn => {
+// { group: Set(tags) }
+let activeFilters = {};
+
+// Set of required flags
+let activeFlags = new Set();
+
+// ===== TAG FILTERS (grouped OR/AND logic) =====
+tagButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const tag = btn.dataset.tag;
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    const group = btn.dataset.group;
 
-    projects.forEach(p => {
-      const projectTags = p.dataset.tags.split(',');
-      if(tag === 'all' || projectTags.includes(tag)) {
-        p.style.display = 'block';
-      } else {
-        p.style.display = 'none';
+    // RESET
+    if (tag === 'all') {
+      activeFilters = {};
+      activeFlags.clear();
+
+      document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      updateProjects();
+      return;
+    }
+
+    document.querySelector('[data-tag="all"]').classList.remove('active');
+
+    if (!activeFilters[group]) {
+      activeFilters[group] = new Set();
+    }
+
+    if (activeFilters[group].has(tag)) {
+      activeFilters[group].delete(tag);
+      btn.classList.remove('active');
+
+      if (activeFilters[group].size === 0) {
+        delete activeFilters[group];
       }
-    });
+    } else {
+      activeFilters[group].add(tag);
+      btn.classList.add('active');
+    }
+
+    updateProjects();
   });
 });
-</script>
 
+// ===== FLAG FILTERS (strict AND logic) =====
+flagButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const flag = btn.dataset.flag;
+
+    if (activeFlags.has(flag)) {
+      activeFlags.delete(flag);
+      btn.classList.remove('active');
+    } else {
+      activeFlags.add(flag);
+      btn.classList.add('active');
+    }
+
+    updateProjects();
+  });
+});
+
+// ===== FILTER LOGIC =====
+function updateProjects() {
+  projects.forEach(p => {
+    const projectTags = p.dataset.tags ? p.dataset.tags.split(',') : [];
+    const projectFlags = p.dataset.flags ? p.dataset.flags.split(',') : [];
+
+    // --- TAG LOGIC (grouped) ---
+    const matchesTags = Object.entries(activeFilters).every(([group, tagsSet]) => {
+      return Array.from(tagsSet).some(tag => projectTags.includes(tag));
+    });
+
+    // --- FLAG LOGIC (must have ALL selected flags) ---
+    const matchesFlags = Array.from(activeFlags).every(flag =>
+      projectFlags.includes(flag)
+    );
+
+    if (
+      (Object.keys(activeFilters).length === 0 || matchesTags) &&
+      matchesFlags
+    ) {
+      p.style.display = 'block';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+}
+</script>
 {{ end }}

@@ -9,4 +9,9 @@ systems:
     description: "Implemented a scriptable object based dialogue system"
     highlighted: true
 tech: ["C#", "Unity Engine"]
+
+flags:
+  hasDemo: true
+  isCommercial: false
+  isGameJam: true
 ---
