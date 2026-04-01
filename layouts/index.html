@@ -16,6 +16,18 @@
   </div>
 </div>
 
+<div class="game-systems">
+  <h2>Gameplay Systems Highlights</h2>
+  <ul>
+    {{ range .Site.Params.gameplayHighlights }}
+      <li>
+        <strong>{{ .title }}</strong> — {{ .description }} 
+        <a href="{{ .projectLink }}">View Project</a>
+      </li>
+    {{ end }}
+  </ul>
+</div>
+
 <div class="featured-projects">
   <h2>Featured Projects</h2>
   <div class="projects-grid">

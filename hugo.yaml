@@ -15,6 +15,16 @@ params:
     tagline: "I build fast, clean, and user-friendly web apps."
     description: "Focused on modern web technologies, performance, and great UX."
     image: "/images/profile.jpg"
+  gameplayHighlights:
+    - title: "AI Combat System"
+      description: "Designed enemy AI behaviors with state machines and dynamic difficulty scaling."
+      projectLink: "/projects/project-one"
+    - title: "Physics Interaction Engine"
+      description: "Built custom rigid body interactions for complex gameplay interactions."
+      projectLink: "/projects/project-two"
+    - title: "Procedural Level Generation test"
+      description: "Implemented runtime level generation tools with modular design for diverse environments."
+      projectLink: "/projects/project-three"
   featuredProjects:
     - title: "Project One"
       description: "A web app that does X, Y, and Z."

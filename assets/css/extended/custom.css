@@ -106,3 +106,61 @@ body {
   margin: 0.5rem 1rem 1rem 1rem;
   opacity: 0.8;
 }
+
+.game-systems {
+  margin: 4rem 0;
+  padding: 2rem;
+  background: #f9f9f9; /* subtle visual separation */
+  border-radius: 10px;
+}
+
+.game-systems h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.game-systems ul {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0;
+}
+
+.game-systems li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.game-systems a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.game-systems a:hover {
+  text-decoration: underline;
+}
+
+.project-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.project-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-banner {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.project-page ul {
+  list-style: disc inside;
+  margin-bottom: 2rem;
+}
+
+.project-page p, .project-page li {
+  line-height: 1.6;
+}
