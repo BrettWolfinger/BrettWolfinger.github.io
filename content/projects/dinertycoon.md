@@ -2,7 +2,7 @@
 title: "Diner Tycoon"
 date: 2025-03-15
 description: "Diner Tycoon"
-heroImage: "/images/uefn-banner.png"
+heroImage: "/images/uefn-banner.jpg"
 featured: false
 systems:
   - name: "Visual Novel Dialogue System"

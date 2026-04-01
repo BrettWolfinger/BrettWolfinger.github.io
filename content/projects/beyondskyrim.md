@@ -2,7 +2,7 @@
 title: "Beyond Skryim"
 date: 2024-08-01
 description: "Skyrim Expansion Mod"
-heroImage: "/images/bsk-banner.jpg"
+heroImage: "/images/bsk-banner.jpeg"
 featured: false
 systems:
   - name: "AI Combat System"

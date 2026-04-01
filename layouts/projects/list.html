@@ -1,0 +1,64 @@
+{{ define "main" }}
+
+<h1>Projects</h1>
+
+<!-- ===== TAG FILTERS ===== -->
+<div class="tag-filters">
+  <button data-tag="all" class="active">All</button>
+
+  {{ $tags := slice }}
+  {{ range .Pages }}
+    {{ with .Params.tech }}
+      {{ range . }}
+        {{ $tags = $tags | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $tags = $tags | uniq | sort }}
+  {{ range $tags }}
+    <button data-tag="{{ . }}">{{ . }}</button>
+  {{ end }}
+</div>
+
+<!-- ===== PROJECTS GRID ===== -->
+<div class="projects-grid">
+  {{ range .Pages }}
+    <div class="project-card" data-tags="{{ delimit .Params.tech "," }}">
+      <a href="{{ .RelPermalink }}">
+        {{ with .Params.heroImage }}
+          <img src="{{ . }}" alt="{{ $.Title }}">
+        {{ end }}
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.description }}</p>
+        {{ with .Params.tech }}
+          <p class="project-tech">{{ delimit . ", " }}</p>
+        {{ end }}
+      </a>
+    </div>
+  {{ end }}
+</div>
+
+<!-- ===== FILTER SCRIPT ===== -->
+<script>
+const buttons = document.querySelectorAll('.tag-filters button');
+const projects = document.querySelectorAll('.project-card');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tag = btn.dataset.tag;
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    projects.forEach(p => {
+      const projectTags = p.dataset.tags.split(',');
+      if(tag === 'all' || projectTags.includes(tag)) {
+        p.style.display = 'block';
+      } else {
+        p.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+{{ end }}
