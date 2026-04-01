@@ -5,3 +5,13 @@ theme: ["PaperMod"]
 caches:
   images:
     dir: :cacheDir/images
+
+params:
+  customCSS:
+    - css/extended/custom.css
+  profile:
+    name: "Brett Wolfinger"
+    title: "Software Developer"
+    tagline: "I build fast, clean, and user-friendly web apps."
+    description: "Focused on modern web technologies, performance, and great UX."
+    image: "/images/profile.jpg"

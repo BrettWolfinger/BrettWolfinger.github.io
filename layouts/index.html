@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="hero">
+  <div class="hero-text">
+    <h1>{{ .Site.Params.profile.name }}</h1>
+    <h2>{{ .Site.Params.profile.title }}</h2>
+    <p class="hero-tagline">{{ .Site.Params.profile.tagline }}</p>
+    <p class="hero-description">{{ .Site.Params.profile.description }}</p>
+    <div class="hero-buttons">
+      <a href="/projects" class="btn primary">View Projects</a>
+      <a href="/contact" class="btn secondary">Contact Me</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="{{ .Site.Params.profile.image }}" alt="Profile">
+  </div>
+</div>
+{{ end }}
