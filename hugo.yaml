@@ -15,3 +15,12 @@ params:
     tagline: "I build fast, clean, and user-friendly web apps."
     description: "Focused on modern web technologies, performance, and great UX."
     image: "/images/profile.jpg"
+  featuredProjects:
+    - title: "Project One"
+      description: "A web app that does X, Y, and Z."
+      link: "/projects/project-one"
+      image: "/images/project1.jpg"
+    - title: "Project Two"
+      description: "A modern app using React and Hugo."
+      link: "/projects/project-two"
+      image: "/images/project2.jpg"
