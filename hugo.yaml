@@ -1,6 +1,6 @@
-baseURL: https://example.org/
+baseURL: https://brettwolfinger.github.io/
 languageCode: en-us
-title: My New Hugo Project
+title: Brett Wolfinger
 theme: ["PaperMod"]
 caches:
   images:
