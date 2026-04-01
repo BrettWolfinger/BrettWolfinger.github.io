@@ -6,14 +6,70 @@
     <description>Recent content on Brett Wolfinger</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Project Burbank</title>
+      <link>http://localhost:1313/projects/burbank/</link>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/burbank/</guid>
+      <description>Life Sim</description>
+    </item>
+    <item>
       <title>Vesuvius</title>
-      <link>http://localhost:1313/projects/project-one/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/project-one/</guid>
+      <link>http://localhost:1313/projects/vesuvius/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/vesuvius/</guid>
       <description>2D Action Platformer</description>
+    </item>
+    <item>
+      <title>Love Language</title>
+      <link>http://localhost:1313/projects/lovelanguage/</link>
+      <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/lovelanguage/</guid>
+      <description>Interactive Fiction/Visual Novel</description>
+    </item>
+    <item>
+      <title>Diner Tycoon</title>
+      <link>http://localhost:1313/projects/dinertycoon/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/dinertycoon/</guid>
+      <description>Diner Tycoon</description>
+    </item>
+    <item>
+      <title>Nitro City Adventure</title>
+      <link>http://localhost:1313/projects/nitrocity/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/nitrocity/</guid>
+      <description>Nitro City</description>
+    </item>
+    <item>
+      <title>Beyond Skryim</title>
+      <link>http://localhost:1313/projects/beyondskyrim/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/beyondskyrim/</guid>
+      <description>Skyrim Expansion Mod</description>
+    </item>
+    <item>
+      <title>Train Game</title>
+      <link>http://localhost:1313/projects/traingame/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/traingame/</guid>
+      <description>Top down zombie survival</description>
+    </item>
+    <item>
+      <title>Fishmonger</title>
+      <link>http://localhost:1313/projects/fishmonger/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/fishmonger/</guid>
+      <description>Fishmonger</description>
+    </item>
+    <item>
+      <title>Physics Engine</title>
+      <link>http://localhost:1313/projects/vesuvius/saving/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/vesuvius/saving/</guid>
+      <description>Detailed technical breakdown of physics engine.</description>
     </item>
   </channel>
 </rss>

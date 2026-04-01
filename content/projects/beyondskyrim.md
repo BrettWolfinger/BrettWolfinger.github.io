@@ -1,9 +1,9 @@
 ---
-title: "Vesuvius"
-date: 2024-01-01
-description: "2D Action Platformer"
-heroImage: "/images/vesuvius-banner.png"
-featured: true
+title: "Beyond Skryim"
+date: 2024-08-01
+description: "Skyrim Expansion Mod"
+heroImage: "/images/bsk-banner.jpg"
+featured: false
 systems:
   - name: "AI Combat System"
     description: "Designed enemy AI behaviors with state machines."
@@ -14,5 +14,5 @@ systems:
   - name: "Procedural Level Generator"
     description: "Runtime level generation for diverse maps."
     highlighted: false
-tech: ["C#", "Unity Engine"]
+tech: ["Papyrus", "Creation Kit"]
 ---

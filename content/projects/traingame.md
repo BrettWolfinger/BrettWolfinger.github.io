@@ -1,0 +1,12 @@
+---
+title: "Train Game"
+date: 2024-03-18
+description: "Top down zombie survival"
+heroImage: "/images/traingame-banner.png"
+featured: false
+systems:
+  - name: "Visual Novel Dialogue System"
+    description: "Implemented a scriptable object based dialogue system"
+    highlighted: false
+tech: ["C#", "Unity Engine"]
+---
