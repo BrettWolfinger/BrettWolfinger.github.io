@@ -1,110 +1,135 @@
 {{ define "main" }}
 
-<h1>Projects</h1>
+<div class="projects-container">
 
-<!-- ===== TAG FILTERS ===== -->
-<div class="tag-filters">
-  <button data-tag="all" class="active">All</button>
+  <!-- ===== SIDEBAR FILTERS ===== -->
+  <aside class="filters-sidebar">
+    <div class="tag-filters">
 
-  {{ $tags := slice }}
-  {{ range .Pages }}
-    {{ with .Params.tech }}
-      {{ range . }}
-        {{ $tags = $tags | append . }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-  {{ $tags = $tags | uniq | sort }}
-  {{ range $tags }}
-    <button data-tag="{{ . }}">{{ . }}</button>
-  {{ end }}
-</div>
-
-<div class="filter-group">
-  <h4>Features</h4>
-
-  <button data-flag="hasDemo">Has Demo</button>
-  <button data-flag="isCommercial">Commercial Product</button>
-  <button data-flag="isGameJam">Game Jam</button>
-</div>
-
-<!-- ===== PROJECTS GRID ===== -->
-<div class="projects-grid">
-  {{ range .Pages }}
-
-    {{ $allTags := slice }}
-    {{ range .Params.tech }}{{ $allTags = $allTags | append . }}{{ end }}
-    {{ range .Params.tags }}{{ $allTags = $allTags | append . }}{{ end }}
-    {{ range .Params.category }}{{ $allTags = $allTags | append . }}{{ end }}
-    {{ range .Params.platforms }}{{ $allTags = $allTags | append . }}{{ end }}
-
-    {{ $flagList := slice }}
-    {{ with .Params.flags }}
-      {{ if .hasDemo }}{{ $flagList = $flagList | append "hasDemo" }}{{ end }}
-      {{ if .isCommercial }}{{ $flagList = $flagList | append "isCommercial" }}{{ end }}
-      {{ if .isGameJam }}{{ $flagList = $flagList | append "isGameJam" }}{{ end }}
-    {{ end }}
-
-    <div class="project-card" 
-         data-tags="{{ delimit ($allTags | uniq) "," }}"
-         data-flags="{{ delimit $flagList "," }}">
-      <a href="{{ .RelPermalink }}">
-        {{ with .Params.heroImage }}
-          <img src="{{ . }}" alt="{{ $.Title }}">
+      <!-- TECH GROUP -->
+      <div class="filter-group">
+        <h4>Tech</h4>
+        {{ $techs := slice }}
+        {{ range .Pages }}
+          {{ range .Params.tech }}
+            {{ $techs = $techs | append . }}
+          {{ end }}
         {{ end }}
-        <h3>{{ .Title }}</h3>
-        <p>{{ .Params.description }}</p>
-        {{ with .Params.tech }}
-          <p class="project-tech">{{ delimit . ", " }}</p>
+        {{ range ($techs | uniq | sort) }}
+          <button data-tag="{{ . }}" data-group="tech">{{ . }}</button>
         {{ end }}
-      </a>
+      </div>
+
+      <!-- FLAGS GROUP -->
+      <div class="filter-group">
+        <h4>Features</h4>
+        <button data-flag="hasDemo">Playable Demo</button>
+        <button data-flag="isCommercial">Commercial Product</button>
+        <button data-flag="isGameJam">Game Jam</button>
+      </div>
+
+      <!-- RESET -->
+      <div class="filter-group">
+        <button data-tag="all" class="active">Show All</button>
+      </div>
+
     </div>
+  </aside>
 
-  {{ end }}
+  <!-- ===== PROJECT GRID ===== -->
+  <div class="projects-grid">
+    {{ range .Pages }}
+
+      {{ $allTags := slice }}
+      {{ range .Params.tech }}{{ $allTags = $allTags | append . }}{{ end }}
+
+      {{ $flagList := slice }}
+      {{ with .Params.flags }}
+        {{ if .hasDemo }}{{ $flagList = $flagList | append "hasDemo" }}{{ end }}
+        {{ if .isCommercial }}{{ $flagList = $flagList | append "isCommercial" }}{{ end }}
+        {{ if .isGameJam }}{{ $flagList = $flagList | append "isGameJam" }}{{ end }}
+      {{ end }}
+
+      <div class="project-card" 
+           data-tags="{{ delimit ($allTags | uniq) "," }}"
+           data-flags="{{ delimit $flagList "," }}">
+        <a href="{{ .RelPermalink }}">
+          {{ with .Params.heroImage }}
+            <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ end }}
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Params.description }}</p>
+          {{ with .Params.tech }}
+            <p class="project-tech">{{ delimit . ", " }}</p>
+          {{ end }}
+        </a>
+      </div>
+
+    {{ end }}
+  </div>
+
 </div>
-<!-- ===== FILTER SCRIPT ===== -->
+
+<!-- ===== FILTERING SCRIPT ===== -->
 <script>
 const tagButtons = document.querySelectorAll('[data-tag]');
 const flagButtons = document.querySelectorAll('[data-flag]');
 const projects = document.querySelectorAll('.project-card');
 
-// { group: Set(tags) }
-let activeFilters = {};
+let activeFilters = {}; // { group: Set(tags) }
+let activeFlags = new Set(); // boolean flags
 
-// Set of required flags
-let activeFlags = new Set();
+const showAllBtn = document.querySelector('[data-tag="all"]');
 
-// ===== TAG FILTERS (grouped OR/AND logic) =====
+function updateProjects() {
+  projects.forEach(p => {
+    const projectTags = p.dataset.tags ? p.dataset.tags.split(',') : [];
+    const projectFlags = p.dataset.flags ? p.dataset.flags.split(',') : [];
+
+    // --- TAGS: AND across groups, OR within group ---
+    const matchesTags = Object.entries(activeFilters).every(([group, tagsSet]) => {
+      return Array.from(tagsSet).some(tag => projectTags.includes(tag));
+    });
+
+    // --- FLAGS: all must match ---
+    const matchesFlags = Array.from(activeFlags).every(flag => projectFlags.includes(flag));
+
+    if ((Object.keys(activeFilters).length === 0 || matchesTags) && matchesFlags) {
+      p.style.display = 'block';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+
+  // Show All button active if no filters
+  if (Object.keys(activeFilters).length === 0 && activeFlags.size === 0) {
+    showAllBtn.classList.add('active');
+  } else {
+    showAllBtn.classList.remove('active');
+  }
+}
+
+// TAG BUTTONS
 tagButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const tag = btn.dataset.tag;
     const group = btn.dataset.group;
 
-    // RESET
     if (tag === 'all') {
       activeFilters = {};
       activeFlags.clear();
-
       document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
+      showAllBtn.classList.add('active');
       updateProjects();
       return;
     }
 
-    document.querySelector('[data-tag="all"]').classList.remove('active');
-
-    if (!activeFilters[group]) {
-      activeFilters[group] = new Set();
-    }
+    if (!activeFilters[group]) activeFilters[group] = new Set();
 
     if (activeFilters[group].has(tag)) {
       activeFilters[group].delete(tag);
       btn.classList.remove('active');
-
-      if (activeFilters[group].size === 0) {
-        delete activeFilters[group];
-      }
+      if (activeFilters[group].size === 0) delete activeFilters[group];
     } else {
       activeFilters[group].add(tag);
       btn.classList.add('active');
@@ -114,7 +139,7 @@ tagButtons.forEach(btn => {
   });
 });
 
-// ===== FLAG FILTERS (strict AND logic) =====
+// FLAG BUTTONS
 flagButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const flag = btn.dataset.flag;
@@ -130,32 +155,5 @@ flagButtons.forEach(btn => {
     updateProjects();
   });
 });
-
-// ===== FILTER LOGIC =====
-function updateProjects() {
-  projects.forEach(p => {
-    const projectTags = p.dataset.tags ? p.dataset.tags.split(',') : [];
-    const projectFlags = p.dataset.flags ? p.dataset.flags.split(',') : [];
-
-    // --- TAG LOGIC (grouped) ---
-    const matchesTags = Object.entries(activeFilters).every(([group, tagsSet]) => {
-      return Array.from(tagsSet).some(tag => projectTags.includes(tag));
-    });
-
-    // --- FLAG LOGIC (must have ALL selected flags) ---
-    const matchesFlags = Array.from(activeFlags).every(flag =>
-      projectFlags.includes(flag)
-    );
-
-    if (
-      (Object.keys(activeFilters).length === 0 || matchesTags) &&
-      matchesFlags
-    ) {
-      p.style.display = 'block';
-    } else {
-      p.style.display = 'none';
-    }
-  });
-}
 </script>
 {{ end }}
