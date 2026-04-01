@@ -11,8 +11,8 @@ params:
     - css/extended/custom.css
   profile:
     name: "Brett Wolfinger"
-    title: "Software Developer"
-    tagline: "I build fast, clean, and user-friendly web apps."
-    description: "Focused on modern web technologies, performance, and great UX."
+    title: "Gameplay Engineer"
+    tagline: "I build gameplay systems and tools."
+    description: "Focused on robust architecture, AI integration, and player experience."
     image: "/images/profile.jpg"
 

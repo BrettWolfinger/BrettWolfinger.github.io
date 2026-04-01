@@ -1,7 +1,7 @@
 ---
 title: "Fishmonger"
 date: 2024-03-14
-description: "Fishmonger"
+description: "Cooking Mama Style Minigames"
 heroImage: "/images/fishmonger-banner.png"
 featured: false
 systems:

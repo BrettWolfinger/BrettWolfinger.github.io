@@ -3,13 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/burbank/</loc>
+    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/vesuvius/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/lovelanguage/</loc>
+    <lastmod>2025-10-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/dinertycoon/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/nitrocity/</loc>
+    <lastmod>2024-11-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/beyondskyrim/</loc>
+    <lastmod>2024-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/traingame/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/fishmonger/</loc>
+    <lastmod>2024-03-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>

@@ -1,7 +1,7 @@
 ---
 title: "Train Game"
 date: 2024-03-18
-description: "Top down zombie survival"
+description: "Top Down Shooter/Survival Game"
 heroImage: "/images/traingame-banner.png"
 featured: false
 systems:
