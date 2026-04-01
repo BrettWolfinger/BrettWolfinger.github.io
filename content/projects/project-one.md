@@ -1,15 +1,18 @@
 ---
-title: "Project One"
+title: "Vesuvius"
 date: 2024-01-01
-description: "A top-down action game with advanced AI combat and procedural levels."
-heroImage: "/images/project1-banner.jpg"
+description: "2D Action Platformer"
+heroImage: "/images/vesuvius-banner.png"
+featured: true
 systems:
   - name: "AI Combat System"
-    description: "Implemented enemy AI with state machines and dynamic difficulty scaling."
+    description: "Designed enemy AI behaviors with state machines."
+    highlighted: true
   - name: "Physics Engine"
-    description: "Custom rigid body interactions for gameplay mechanics."
-tech: ["C++", "Unreal Engine"]
-link: "/projects/project-one"
+    description: "Custom rigid body interactions for gameplay."
+    highlighted: false
+  - name: "Procedural Level Generator"
+    description: "Runtime level generation for diverse maps."
+    highlighted: false
+tech: ["C#", "Unity Engine"]
 ---
-# Optional full content here
-Additional details, development notes, or embedded screenshots.

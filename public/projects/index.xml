@@ -6,13 +6,14 @@
     <description>Recent content in Projects on Brett Wolfinger</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project One</title>
+      <title>Vesuvius</title>
       <link>http://localhost:1313/projects/project-one/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/project-one/</guid>
-      <description>A top-down action game with advanced AI combat and procedural levels.</description>
+      <description>2D Action Platformer</description>
     </item>
   </channel>
 </rss>
