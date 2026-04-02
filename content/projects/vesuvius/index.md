@@ -14,7 +14,7 @@ systems:
     description: "Designed enemy AI behaviors with state machines."
     highlighted: false
 tech: ["C#", "Unity Engine"]
-
+demoLink: "https://l1ryx.itch.io/vesuvius"
 flags:
   hasDemo: true
   isCommercial: true

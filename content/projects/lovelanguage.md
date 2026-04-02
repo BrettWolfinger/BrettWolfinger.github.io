@@ -11,7 +11,7 @@ systems:
     description: "Implemented a scriptable object based dialogue system"
     highlighted: true
 tech: ["C#", "Unity Engine"]
-
+demoLink: "https://hopkins-game-dev-society.itch.io/love-language"
 flags:
   hasDemo: true
   isCommercial: false
