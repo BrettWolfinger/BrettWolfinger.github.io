@@ -1,20 +1,31 @@
 {{ define "main" }}
 <div class="project-page">
   <h1>{{ .Title }}</h1>
+
   {{ with .Params.heroImage }}
     <img src="{{ . }}" alt="{{ $.Title }}" class="project-banner">
   {{ end }}
 
-  <p>{{ .Params.description }}</p>
+  {{ with .Params.description }}
+    <p>{{ . }}</p>
+  {{ end }}
 
-  <h2>Systems Built / Highlights</h2>
-  <ul>
-    {{ range .Params.systems }}
-      <li><strong>{{ .name }}</strong> — {{ .description }}</li>
+  {{ with .Params.systems }}
+    {{ if gt (len .) 0 }}
+      <h2>Systems Built / Highlights</h2>
+      <ul>
+        {{ range . }}
+          <li><strong>{{ .name }}</strong>{{ with .description }} — {{ . }}{{ end }}</li>
+        {{ end }}
+      </ul>
     {{ end }}
-  </ul>
+  {{ end }}
 
-  <h2>Tech Used</h2>
-  <p>{{ delimit .Params.tech ", " }}</p>
+  {{ with .Params.tech }}
+    {{ if gt (len .) 0 }}
+      <h2>Tech Used</h2>
+      <p>{{ delimit . ", " }}</p>
+    {{ end }}
+  {{ end }}
 </div>
 {{ end }}
