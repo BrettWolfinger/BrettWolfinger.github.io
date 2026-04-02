@@ -18,12 +18,7 @@ systems:
     description: "API allowing other engineers or the AI agent to query relevant data from the graph"
     highlighted: false
 tech: ["C++", "Unreal Engine"]
-details:
-  - name: "Ability System Breakdown"
-    link: "/projects/burbank/aidialogue/"
-  - name: "Networking Architecture"
-    link: "/projects/burbank/networking/"
-demolink:
+
 flags:
   hasDemo: false
   isCommercial: true
