@@ -11,7 +11,7 @@ systems:
     description: "Utilized the lootlocker API to create a leaderboard for players to compete on."
     highlighted: false
 tech: ["C#", "Unity Engine"]
-demoLink = "https://alantir333.itch.io/train-game"
+demoLink: "https://alantir333.itch.io/train-game"
 flags:
   hasDemo: true
   isCommercial: false
