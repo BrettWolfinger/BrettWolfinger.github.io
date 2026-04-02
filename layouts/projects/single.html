@@ -1,31 +1,76 @@
 {{ define "main" }}
 <div class="project-page">
-  <h1>{{ .Title }}</h1>
 
-  {{ with .Params.heroImage }}
-    <img src="{{ . }}" alt="{{ $.Title }}" class="project-banner">
-  {{ end }}
+  <!-- ===== HERO SECTION ===== -->
+  <div class="project-hero">
 
-  {{ with .Params.description }}
-    <p>{{ . }}</p>
-  {{ end }}
+    <!-- LEFT: TEXT -->
+    <div class="hero-text">
+      <h1>{{ .Title }}</h1>
 
+      {{ with .Params.description }}
+        <p class="tagline">{{ . }}</p>
+      {{ end }}
+
+      {{ with .Params.purpose }}
+        <p class="purpose">{{ . }}</p>
+      {{ end }}
+
+      {{ with .Params.longDescription }}
+        <p class="description">{{ . }}</p>
+      {{ end }}
+
+      {{ with .Params.tech }}
+        {{ if gt (len .) 0 }}
+          <div class="tech">
+            <strong>Tech Used:</strong>
+            <span>{{ delimit . ", " }}</span>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+
+    <!-- RIGHT: IMAGE -->
+    <div class="hero-image">
+      {{ with .Params.heroImage }}
+        <img src="{{ . }}" alt="{{ $.Title }}">
+      {{ end }}
+    </div>
+
+  </div>
+
+  <!-- ===== SYSTEMS / HIGHLIGHTS ===== -->
   {{ with .Params.systems }}
     {{ if gt (len .) 0 }}
-      <h2>Systems Built / Highlights</h2>
-      <ul>
-        {{ range . }}
-          <li><strong>{{ .name }}</strong>{{ with .description }} — {{ . }}{{ end }}</li>
-        {{ end }}
-      </ul>
+      <div class="project-section">
+        <h2>Systems Built / Highlights</h2>
+        <ul>
+          {{ range . }}
+            <li>
+              <strong>{{ .name }}</strong>
+              {{ with .description }} — {{ . }}{{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </div>
     {{ end }}
   {{ end }}
 
-  {{ with .Params.tech }}
+  <!-- ===== DEEP DIVE LINKS ===== -->
+  {{ with .Params.details }}
     {{ if gt (len .) 0 }}
-      <h2>Tech Used</h2>
-      <p>{{ delimit . ", " }}</p>
+      <div class="project-section">
+        <h2>Technical Deep Dives</h2>
+        <ul>
+          {{ range . }}
+            <li>
+              <a href="{{ .link }}">{{ .name }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
     {{ end }}
   {{ end }}
+
 </div>
 {{ end }}
