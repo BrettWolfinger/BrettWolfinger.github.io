@@ -14,6 +14,7 @@ contribution:
 systems:
   - name: "AI-Driven Dialogue Generation"
     description: "Enabling infinite storytelling through knowledge graph focused LLM dialogue generation"
+    image: "/images/burbank-banner.jpg"
     highlighted: true
     slug: ai-dialogue
   - name: "Unreal Graph Editor Tool"
