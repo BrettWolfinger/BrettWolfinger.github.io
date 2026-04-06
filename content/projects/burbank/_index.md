@@ -15,12 +15,15 @@ systems:
   - name: "AI-Driven Dialogue Generation"
     description: "Enabling infinite storytelling through knowledge graph focused LLM dialogue generation"
     highlighted: true
+    slug: ai-dialogue
   - name: "Unreal Graph Editor Tool"
     description: "Interactable force-directed graph that updates in real-time during gameplay"
     highlighted: false
+    slug: graph-editor
   - name: "Composable Graph Query System"
     description: "API allowing other engineers or the AI agent to query relevant data from the graph"
     highlighted: false
+    slug: graph-query
 tech: ["C++", "Unreal Engine"]
 details:
   - name: "Ability System Breakdown"

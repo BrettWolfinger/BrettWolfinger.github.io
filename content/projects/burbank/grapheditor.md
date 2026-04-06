@@ -4,6 +4,7 @@ weight: 1
 summary: "How I used a knowledge graph to focus LLM dialogue generation"
 draft: false
 layout: "project-detail"
+slug: graph-editor
 ---
 
 ## Overview

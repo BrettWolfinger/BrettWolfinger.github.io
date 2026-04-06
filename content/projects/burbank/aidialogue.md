@@ -5,6 +5,7 @@ summary: "How I used a knowledge graph to focus LLM dialogue generation"
 draft: false
 image: "/images/burbank-banner.jpg"
 layout: "project-detail"
+slug: ai-dialogue
 ---
 
 ## Overview
