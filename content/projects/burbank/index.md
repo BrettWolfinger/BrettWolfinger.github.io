@@ -7,6 +7,9 @@ Project Burbank adapts to your wildest imagination."
 purpose: "Midsummer Studios"
 heroImage: "/images/burbank-banner.jpg"
 featured: true
+contribution:
+  - Improved LLM by implementing state of the art attention mechanisms
+  - Empowered team to work with my software through clear tooling and documentation
 systems:
   - name: "AI-Driven Dialogue Generation"
     description: "Enabling infinite storytelling through knowledge graph focused LLM dialogue generation"

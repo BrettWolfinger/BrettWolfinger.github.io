@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="project-detail-container">
+
+  <!-- MOBILE TOC TOGGLE -->
+  <button class="toc-toggle" onclick="toggleTOC()">☰ Contents</button>
+
+  <!-- SIDEBAR TOC -->
+  <aside class="toc-sidebar" id="toc">
+    <div class="toc-inner">
+      <h4>On This Page</h4>
+      {{ .TableOfContents }}
+
+      <hr>
+
+      <!-- BACK LINK -->
+      <a href="../" class="back-link">← Back to Project</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <article class="project-detail-content">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+  </article>
+
+</div>
+
+<!-- ===== SCROLL SPY SCRIPT ===== -->
+<script>
+const headings = document.querySelectorAll('.project-detail-content h2, .project-detail-content h3');
+const tocLinks = document.querySelectorAll('.toc-sidebar a');
+
+function onScroll() {
+  let current = "";
+
+  headings.forEach(h => {
+    const top = h.offsetTop - 120;
+    if (window.scrollY >= top) {
+      current = h.id;
+    }
+  });
+
+  tocLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === "#" + current) {
+      link.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', onScroll);
+
+function toggleTOC() {
+  document.getElementById('toc').classList.toggle('open');
+}
+</script>
+
+{{ end }}

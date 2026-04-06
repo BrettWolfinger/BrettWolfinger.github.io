@@ -31,3 +31,10 @@ params:
     description: "Focused on robust architecture, AI integration, and player experience."
     image: "/images/profile.jpg"
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3

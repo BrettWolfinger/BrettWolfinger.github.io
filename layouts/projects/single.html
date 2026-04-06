@@ -28,6 +28,15 @@
           </div>
         {{ end }}
       {{ end }}
+
+    <!-- ✅ PLAY DEMO BUTTON -->
+      {{ with .Params.demoLink }}
+        <div class="hero-actions">
+          <a href="{{ . }}" class="demo-button" target="_blank" rel="noopener">
+            ▶ Play Demo
+          </a>
+        </div>
+      {{ end }}
     </div>
 
     <!-- RIGHT: IMAGE -->
@@ -39,11 +48,22 @@
 
   </div>
 
+  {{ with .Params.contribution }}
+    <div class="contribution">
+      <h2>My Contribution</h2>
+      <ul>
+        {{ range . }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+  
   <!-- ===== SYSTEMS / HIGHLIGHTS ===== -->
   {{ with .Params.systems }}
     {{ if gt (len .) 0 }}
       <div class="project-section">
-        <h2>Systems Built / Highlights</h2>
+        <h2>Key Systems I Built</h2>
         <ul>
           {{ range . }}
             <li>
