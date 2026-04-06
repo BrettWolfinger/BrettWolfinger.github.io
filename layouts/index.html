@@ -21,7 +21,7 @@
 <div class="game-systems">
   <h2>My Gameplay Systems Highlights</h2>
   <ul>
-    {{ $projects := where .Site.RegularPages "Section" "projects" }}
+    {{ $projects := where .Site.Pages "Section" "projects" }}
     {{ $seenSystems := dict }}
     {{ range $projects }}
       {{ $project := . }}
@@ -43,7 +43,8 @@
 <div class="featured-projects">
   <h2>Featured Projects</h2>
   <div class="projects-grid">
-    {{ $featured := where .Site.RegularPages "Params.featured" true }}
+    {{ $allProjects := where .Site.Pages "Section" "projects" }}
+    {{ $featured := where $allProjects "Params.featured" true }}
     {{ range $featured }}
       <div class="project-card">
         <a href="{{ .RelPermalink }}">

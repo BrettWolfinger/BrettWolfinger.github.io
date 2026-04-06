@@ -75,19 +75,45 @@
       </div>
     {{ end }}
   {{ end }}
-
+  
   <!-- ===== DEEP DIVE LINKS ===== -->
-  {{ with .Params.details }}
+  {{ with .RegularPages }}
     {{ if gt (len .) 0 }}
       <div class="project-section">
         <h2>Technical Deep Dives</h2>
-        <ul>
-          {{ range . }}
-            <li>
-              <a href="{{ .link }}">{{ .name }}</a>
-            </li>
+
+        <div class="deepdive-grid">
+          {{ range sort . "Weight" }}
+            <a href="{{ .RelPermalink }}" class="deepdive-card">
+
+              {{ with .Params.image }}
+                <div class="card-image">
+                  <img src="{{ . }}" alt="{{ $.Title }}">
+                </div>
+              {{ end }}
+
+              <div class="card-content">
+                <h3>{{ .Title }}</h3>
+
+                {{ with .Params.summary }}
+                  <p>{{ . }}</p>
+                {{ end }}
+
+                {{ with .Params.tech }}
+                  <div class="card-tech">
+                    {{ range . }}
+                      <span>{{ . }}</span>
+                    {{ end }}
+                  </div>
+                {{ end }}
+
+                <!-- ✅ READ MORE -->
+                <p class="read-more">Read more →</p>
+              </div>
+
+            </a>
           {{ end }}
-        </ul>
+        </div>
       </div>
     {{ end }}
   {{ end }}

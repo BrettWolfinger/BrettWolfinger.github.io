@@ -1,9 +1,8 @@
 ---
-title: "AI Generated Dialogue"
+title: "Unreal Graph Editor Tool"
 weight: 1
 summary: "How I used a knowledge graph to focus LLM dialogue generation"
 draft: false
-image: "/images/burbank-banner.jpg"
 layout: "project-detail"
 ---
 

@@ -7,6 +7,7 @@ Project Burbank adapts to your wildest imagination."
 purpose: "Midsummer Studios"
 heroImage: "/images/burbank-banner.jpg"
 featured: true
+layout: "single"
 contribution:
   - Improved LLM by implementing state of the art attention mechanisms
   - Empowered team to work with my software through clear tooling and documentation
