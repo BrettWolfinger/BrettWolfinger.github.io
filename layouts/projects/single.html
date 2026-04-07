@@ -59,64 +59,43 @@
     </div>
   {{ end }}
   
-  <!-- ===== SYSTEMS / HIGHLIGHTS ===== -->
-  {{ with .Params.systems }}
-    {{ if gt (len .) 0 }}
-      <div class="project-section">
-        <h2>Key Systems I Built</h2>
-        <ul>
-          {{ range . }}
-            <li>
-              <strong>{{ .name }}</strong>
-              {{ with .description }} — {{ . }}{{ end }}
-            </li>
+  <div class="project-section">
+    <h2>Key Systems I Built</h2>
+    <div class="deepdive-grid">
+      {{ $pages := .RegularPages }}  <!-- all subpages -->
+      {{ range .Params.systems }}
+        {{ $system := . }}
+        {{/* Try to find a page matching the system */}}
+        {{ $deepPage := index (where $pages "Params.slug" $system.slug) 0 }}
+
+        <div class="deepdive-card">
+          {{ with $system.image }}
+            <div class="card-image">
+              <img src="{{ . }}" alt="{{ $system.name }}">
+            </div>
           {{ end }}
-        </ul>
-      </div>
-    {{ end }}
-  {{ end }}
-  
-  <!-- ===== DEEP DIVE LINKS ===== -->
-  {{ with .RegularPages }}
-    {{ if gt (len .) 0 }}
-      <div class="project-section">
-        <h2>Technical Deep Dives</h2>
+          <div class="card-content">
+            <h3>{{ $system.name }}</h3>
+            {{ with $system.description }}
+              <p>{{ . }}</p>
+            {{ end }}
 
-        <div class="deepdive-grid">
-          {{ range sort . "Weight" }}
-            <a href="{{ .RelPermalink }}" class="deepdive-card">
-
-              {{ with .Params.image }}
-                <div class="card-image">
-                  <img src="{{ . }}" alt="{{ $.Title }}">
-                </div>
-              {{ end }}
-
-              <div class="card-content">
-                <h3>{{ .Title }}</h3>
-
-                {{ with .Params.summary }}
-                  <p>{{ . }}</p>
+            {{ with $system.tech }}
+              <div class="card-tech">
+                {{ range . }}
+                  <span>{{ . }}</span>
                 {{ end }}
-
-                {{ with .Params.tech }}
-                  <div class="card-tech">
-                    {{ range . }}
-                      <span>{{ . }}</span>
-                    {{ end }}
-                  </div>
-                {{ end }}
-
-                <!-- ✅ READ MORE -->
-                <p class="read-more">Read more →</p>
               </div>
+            {{ end }}
 
-            </a>
-          {{ end }}
+            {{ if $deepPage }}
+              <a href="{{ $deepPage.RelPermalink }}" class="read-more">Read more →</a>
+            {{ end }}
+          </div>
         </div>
-      </div>
-    {{ end }}
-  {{ end }}
+      {{ end }}
+    </div>
+  </div>
 
 </div>
 {{ end }}

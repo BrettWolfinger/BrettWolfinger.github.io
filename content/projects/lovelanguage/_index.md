@@ -6,6 +6,7 @@ longDescription: "Time to break out of your shell. You've always struggled to pu
 purpose: "Scream Jam 2025"
 heroImage: "/images/lovelanguage-banner.png"
 featured: false
+layout: "single"
 systems:
   - name: "Visual Novel Dialogue System"
     description: "Implemented a scriptable object based dialogue system"

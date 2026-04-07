@@ -6,6 +6,7 @@ longDescription: "Explore the frozen depths of Vesuvius, a 2D action platformer.
 purpose: "Snow Day Games"
 heroImage: "/images/vesuvius-banner.png"
 featured: true
+layout: "single"
 systems:
   - name: "Parallel Scene State Persistance"
     description: "Seamless transition between game states"

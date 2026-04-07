@@ -6,6 +6,7 @@ longDescription: "Complete minigames, explore the island, and uncover a secret p
 purpose: "Power Shift Games"
 heroImage: "/images/uefn-banner.jpg"
 featured: false
+layout: "single"
 systems:
   - name: "Inheritance Based Competitive Minigames"
     description: "Implemented an architecture for rapid development of new minigames"

@@ -6,6 +6,7 @@ longDescription: "Beyond Skyrim expands the beloved Skyrim experience by explori
 purpose: "Beyond Skyrim"
 heroImage: "/images/bsk-banner.jpeg"
 featured: false
+layout: "single"
 systems:
   - name: "Complex RPG Quest Implementation"
     description: "Implemented over a dozen unique quests with advancing stages, branching progression, and scripted gameplay encounters"

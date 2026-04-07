@@ -6,70 +6,21 @@
     <description>Recent content on Brett Wolfinger</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Generated Dialogue</title>
-      <link>http://localhost:1313/projects/burbank/aidialogue/</link>
+      <link>http://localhost:1313/projects/burbank/ai-dialogue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/burbank/aidialogue/</guid>
+      <guid>http://localhost:1313/projects/burbank/ai-dialogue/</guid>
       <description>How I used a knowledge graph to focus LLM dialogue generation</description>
     </item>
     <item>
       <title>Unreal Graph Editor Tool</title>
-      <link>http://localhost:1313/projects/burbank/grapheditor/</link>
+      <link>http://localhost:1313/projects/burbank/graph-editor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/burbank/grapheditor/</guid>
+      <guid>http://localhost:1313/projects/burbank/graph-editor/</guid>
       <description>How I used a knowledge graph to focus LLM dialogue generation</description>
-    </item>
-    <item>
-      <title>Vesuvius</title>
-      <link>http://localhost:1313/projects/vesuvius/</link>
-      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/vesuvius/</guid>
-      <description>Surrealist 2D Action Platformer</description>
-    </item>
-    <item>
-      <title>Love Language</title>
-      <link>http://localhost:1313/projects/lovelanguage/</link>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/lovelanguage/</guid>
-      <description>Interactive Fiction/Visual Novel</description>
-    </item>
-    <item>
-      <title>Diner Tycoon</title>
-      <link>http://localhost:1313/projects/dinertycoon/</link>
-      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/dinertycoon/</guid>
-      <description>Resource Management Game with Idle Clicker Inspiration</description>
-    </item>
-    <item>
-      <title>Nitro City Adventure</title>
-      <link>http://localhost:1313/projects/nitrocity/</link>
-      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/nitrocity/</guid>
-      <description>Lego Island Inspired Exploration and Minigames</description>
-    </item>
-    <item>
-      <title>Beyond Skryim</title>
-      <link>http://localhost:1313/projects/beyondskyrim/</link>
-      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/beyondskyrim/</guid>
-      <description>Expansion Sized Skyrim Mod Collaboration</description>
-    </item>
-    <item>
-      <title>Train Game</title>
-      <link>http://localhost:1313/projects/traingame/</link>
-      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/traingame/</guid>
-      <description>Top Down Shooter/Survival Game</description>
-    </item>
-    <item>
-      <title>Fishmonger</title>
-      <link>http://localhost:1313/projects/fishmonger/</link>
-      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/fishmonger/</guid>
-      <description>Cooking Mama Style Minigames</description>
     </item>
   </channel>
 </rss>

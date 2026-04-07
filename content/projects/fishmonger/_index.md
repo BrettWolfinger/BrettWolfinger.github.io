@@ -6,6 +6,7 @@ longDescription: "Live the life of a fishmonger in this business simulation game
 purpose: "Mini Jam 153 (March 2024)"
 heroImage: "/images/fishmonger-banner.png"
 featured: false
+layout: "single"
 systems:
   - name: "Interactable 3D Models"
     description: "Augmented custom 3D fish models with gameplay elements allowing players to complete several different tasks depending on the tool selected."

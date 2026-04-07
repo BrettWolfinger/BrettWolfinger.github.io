@@ -6,6 +6,7 @@ longDescription: "Build the ultimate dining experience! Juggle the responsibilit
 purpose: "Power Shift Games"
 heroImage: "/images/uefn-banner.jpg"
 featured: false
+layout: "single"
 systems:
   - name: "Progressively Unlocking Game Mechanics"
     description: "New systems, upgrades, and areas unlock the more customers you serve"

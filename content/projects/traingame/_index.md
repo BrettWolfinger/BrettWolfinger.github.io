@@ -6,6 +6,7 @@ longDescription: "Battle endless waves of enemies while competing with other pla
 purpose: "Mini Jam 154 (March 2024)"
 heroImage: "/images/traingame-banner.png"
 featured: false
+layout: "single"
 systems:
   - name: "Online High Score Leaderboard"
     description: "Utilized the lootlocker API to create a leaderboard for players to compete on."
