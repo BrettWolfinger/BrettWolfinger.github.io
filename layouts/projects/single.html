@@ -71,7 +71,8 @@
         <div class="deepdive-card">
           {{ with $system.image }}
             <div class="card-image">
-              <img src="{{ . }}" alt="{{ $system.name }}">
+              {{ $img := resources.Get . }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $system.name }}">
             </div>
           {{ end }}
           <div class="card-content">

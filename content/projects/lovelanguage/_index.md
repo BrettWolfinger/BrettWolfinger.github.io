@@ -10,6 +10,7 @@ layout: "single"
 systems:
   - name: "Visual Novel Dialogue System"
     description: "Implemented a scriptable object based dialogue system"
+    image: "images/projects/lovelanguage/lovelanguage-dialogue.png"
     highlighted: true
 tech: ["C#", "Unity Engine"]
 demoLink: "https://hopkins-game-dev-society.itch.io/love-language"

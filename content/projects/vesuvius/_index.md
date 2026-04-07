@@ -7,12 +7,19 @@ purpose: "Snow Day Games"
 heroImage: "/images/vesuvius-banner.png"
 featured: true
 layout: "single"
+contribution:
+  - Lead the technical development, implementing most gameplay systems including player controls, saving, and dialogue
+  - Wrote the narrative and designed the world for the game 
+  - Cofounded Snow Day Games and run the business operations
 systems:
   - name: "Parallel Scene State Persistance"
     description: "Seamless transition between game states"
+    image: "/images/projects/vesuvius/vesuvius-reality.png"
     highlighted: true
+    slug: "reality"
   - name: "AI Combat System"
     description: "Designed enemy AI behaviors with state machines."
+    image: "/images/projects/vesuvius/vesuvius-boss.png"
     highlighted: false
 tech: ["C#", "Unity Engine"]
 demoLink: "https://l1ryx.itch.io/vesuvius"

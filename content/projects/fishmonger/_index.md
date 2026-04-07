@@ -10,6 +10,7 @@ layout: "single"
 systems:
   - name: "Interactable 3D Models"
     description: "Augmented custom 3D fish models with gameplay elements allowing players to complete several different tasks depending on the tool selected."
+    image: "/images/projects/fishmonger/fishmonger-3dmodel.png"
     highlighted: false
 tech: ["C#", "Unity Engine"]
 demolink: "https://alantir333.itch.io/fishmonger"
