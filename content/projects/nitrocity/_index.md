@@ -13,6 +13,7 @@ systems:
     highlighted: true
   - name: "Analytics Protocol and Dashboard"
     description: "Tracked and visualized key player engagement metrics"
+    image: "/images/projects/nitrocity/uefn-analytics.png"
     highlighted: false
 
 tech: ["Verse", "Unreal Editor for Fortnite"]

@@ -10,9 +10,11 @@ layout: "single"
 systems:
   - name: "Complex RPG Quest Implementation"
     description: "Implemented over a dozen unique quests with advancing stages, branching progression, and scripted gameplay encounters"
+    image: "/images/projects/beyondskyrim/bsk-quest.png"
     highlighted: false
   - name: "Scaling NPC Faction Implementation"
     description: "Designed a bandit faction with lore-consistent classes, equipment, and combat proficiencies that scales with the player's power." 
+    image: "/images/projects/beyondskyrim/bsk-faction.png"
     highlighted: false
 tech: ["Papyrus", "Creation Kit"]
 
