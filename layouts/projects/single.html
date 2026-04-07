@@ -40,10 +40,14 @@
     </div>
 
     <!-- RIGHT: IMAGE -->
+ 
     <div class="hero-image">
-      {{ with .Params.heroImage }}
-        <img src="{{ . }}" alt="{{ $.Title }}">
-      {{ end }}
+        {{ with .Params.heroImage }}
+          {{ $img := resources.Get . }}
+          {{ if $img }}
+            <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}">
+          {{ end }}
+        {{ end }}
     </div>
 
   </div>

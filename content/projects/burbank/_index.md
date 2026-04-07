@@ -5,7 +5,7 @@ description: "AI-Powered Life Sim"
 longDescription: "Tell your own story in this unique life simulator. Utilizing Generative AI for dialogue and storytelling,
 Project Burbank adapts to your wildest imagination."
 purpose: "Midsummer Studios"
-heroImage: "/images/burbank-banner.jpg"
+heroImage: "/images/projects/burbank/burbank-banner.jpg"
 featured: true
 layout: "single"
 contribution:
@@ -14,7 +14,7 @@ contribution:
 systems:
   - name: "AI-Driven Dialogue Generation"
     description: "Enabling infinite storytelling through knowledge graph focused LLM dialogue generation"
-    image: "/images/burbank-banner.jpg"
+    image: "/images/projects/burbank/burbank-graph.png"
     highlighted: true
     slug: ai-dialogue
   - name: "Unreal Graph Editor Tool"

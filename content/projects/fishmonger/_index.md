@@ -4,7 +4,7 @@ date: 2024-03-14
 description: "Cooking Mama Style Minigames"
 longDescription: "Live the life of a fishmonger in this business simulation game. Complete minigames to process fresh fish and prepare them for sale at the market. Future updates include economy simulation, purchasable upgrades, and more ways to expand your empire!"
 purpose: "Mini Jam 153 (March 2024)"
-heroImage: "/images/fishmonger-banner.png"
+heroImage: "/images/projects/fishmonger/fishmonger-banner.png"
 featured: false
 layout: "single"
 systems:

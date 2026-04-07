@@ -55,7 +55,10 @@
            data-flags="{{ delimit $flagList "," }}">
         <a href="{{ .RelPermalink }}">
           {{ with .Params.heroImage }}
-            <img src="{{ . }}" alt="{{ $.Title }}">
+          {{ $img := resources.Get . }}
+            {{ if $img }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}">
+            {{ end }}
           {{ end }}
           <h3>{{ .Title }}</h3>
           <p>{{ .Params.description }}</p>
